@@ -1,0 +1,307 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --first-color: hsl(33, 90%, 65%);
+  --second-color: hsl(355, 90%, 55%);
+  --third-color: hsl(198, 90%, 65%);
+  --title-color: hsl(0, 0%, 12%);
+  --text-color: hsl(0, 0%, 56%);
+  --black-color: hsl(0, 0%, 4%);
+  --white-color: hsl(0, 0%, 100%);
+  --body-color: hsl(0, 0%, 95%);
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Montserrat", sans-serif;
+  --biggest-font-size: 2.25rem;
+  --h2-font-size: 1.25rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+
+  /*========== Font weight ==========*/
+  --font-regular: 400;
+  --font-semi-bold: 600;
+  --font-bold: 700;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/*========== Responsive typography ==========*/
+@media screen and (min-width: 1150px) {
+  :root {
+    --biggest-font-size: 3.5rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--title-color);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 1120px;
+  margin-inline: 1.5rem;
+}
+
+.main {
+  overflow: hidden;
+}
+
+/*=============== SCROLL BAR ===============*/
+::-webkit-scrollbar {
+  width: 0.6rem;
+  background-color: hsl(0, 0% 70%);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: hsl(0, 0%, 60%);
+}
+
+/*=============== SWIPER CLASS ===============*/
+.swiper {
+  margin-inline: initial;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  content: "";
+}
+
+.swiper-pagination {
+  position: initial;
+  font-weight: var(--font-semi-bold);
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  position: initial;
+  width: initial;
+  height: initial;
+  font-size: 1.25rem;
+  padding: 3px 20px;
+}
+
+.swiper-button-prev {
+  background-color: var(--black-color);
+  color: var(--white-color);
+}
+
+.swiper-button-next {
+  background-color: var(--white-color);
+  color: var(--black-color);
+}
+
+/* Swiper animation */
+.swiper-slide-active .home-title {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.swiper-slide-active .home-circle {
+  opacity: 1;
+}
+
+.swiper-slide-active .home-img-1 {
+  transform: translateX(0) rotate(15deg);
+  opacity: 1;
+}
+
+.swiper-slide-active .home-img-2 {
+  transform: translateX(0) rotate(-30deg);
+  opacity: 1;
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+@media screen and (max-width: 330px) {
+  .container {
+    margin-inline: 1rem;
+  }
+
+  .home-title {
+    font-size: 1.8rem;
+  }
+
+  .home-circle {
+    width: 220px;
+    height: 220px;
+  }
+
+  .home-img-1,
+  .home-img-2 {
+    width: 160px;
+  }
+
+  .home-img-1 {
+    bottom: 6rem;
+  }
+}
+
+/* For medium devices */
+@media screen and (min-width: 540px) {
+  .home-footer {
+    margin-inline: 1.5rem;
+    grid-template-columns: repeat(2, max-content);
+    justify-content: space-between;
+  }
+
+  .home-controls {
+    flex-direction: row;
+    column-gap: 2rem;
+  }
+
+  .home-navigation {
+    order: -1;
+    align-self: flex-end;
+  }
+}
+
+/* For large devices */
+@media screen and (min-width: 1023px) {
+  .container {
+    margin-inline: auto;
+  }
+
+  .nav {
+    height: calc(var(--header-height) + 2rem);
+  }
+
+  .nav-close,
+  .nav-toggle {
+    display: none;
+  }
+
+  .nav-menu {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+  }
+
+  .nav-list {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+  }
+
+  .nav-link {
+    color: var(--black-color);
+    font-size: var(--font-semi-bold);
+    font-weight: var(--font-semi-bold);
+  }
+
+  .nav-link:hover {
+    text-decoration: underline;
+  }
+
+  .nav-social {
+    display: flex;
+    gap: 1rem;
+    align-self: flex-end;
+  }
+
+  .nav-social-link {
+    color: var(--black-color);
+    font-size: 1.3rem;
+  }
+
+  .home-container {
+    grid-template-columns: 450px 600px;
+    grid-template-rows: 470px;
+    align-items: center;
+    justify-content: center;
+    column-gap: 2rem;
+    row-gap: 6rem;
+    padding-top: 12rem;
+  }
+
+  .home-footer {
+    grid-column: 1/3;
+    margin-inline: 0;
+  }
+
+  .home-data {
+    text-align: initial;
+  }
+
+  .home-subtitle {
+    font-size: var(--normal-font-size);
+  }
+
+  .hopme-titles {
+    margin-bottom: 3rem;
+  }
+
+  .home-button {
+    justify-self: flex-start;
+    z-index: 2;
+  }
+
+  .home-images {
+    position: absolute;
+    top: 9rem;
+  }
+
+  .home-card {
+    transform: translateX(15rem);
+  }
+
+  .home-circle {
+    width: 570px;
+    height: 570px;
+  }
+
+  .home-img-1,
+  .home-img-2 {
+    width: 420px;
+  }
+
+  .home-img-1 {
+    bottom: 14rem;
+    left: -3rem;
+    transform: translateX(-25rem) rotate(60deg);
+  }
+
+  .home-img-2 {
+    bottom: 6rem;
+    transform: translateX(25rem) rotate(60deg);
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    font-size: 1.5rem;
+  }
+}

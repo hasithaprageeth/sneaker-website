@@ -1,0 +1,144 @@
+/*=============== HEADER ===============*/
+
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: var(--body-color);
+  z-index: var(--z-fixed);
+  transition: box-shadow 0.4s;
+}
+
+.home-container,
+.home-data,
+.home-article,
+.home-images,
+.home-footer {
+  display: grid;
+}
+
+.home-container {
+  padding-block: 7.5rem 2.5rem;
+  row-gap: 1.5rem;
+}
+
+.home-data {
+  text-align: center;
+}
+
+.home-subtitle {
+  font-size: var(--small-font-size);
+}
+
+.home-titles {
+  margin-block: 0.5rem 2rem;
+}
+
+.home-title {
+  font-size: var(--biggest-font-size);
+  transform: translateY(10rem);
+  opacity: 0;
+  transition: transform 0.3s 0.2s, opacity 0.3s;
+}
+
+.home-button,
+.home-social,
+.home-controls,
+.home-navigation {
+  display: flex;
+}
+
+.home-button {
+  justify-self: center;
+  align-items: center;
+  column-gap: 0.5rem;
+  font-weight: var(--font-semi-bold);
+  color: var(--title-color);
+}
+
+.home-button i {
+  font-size: 1.25rem;
+  font-weight: initial;
+  transition: transform 0.4s;
+}
+
+.home-button:hover i {
+  transform: translateX(0.5rem);
+}
+
+.home-article {
+  width: 270px;
+  place-items: center;
+  padding-block: 1rem;
+}
+
+.home-card {
+  position: relative;
+}
+
+.home-circle {
+  width: 270px;
+  height: 270px;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.1s ease-out;
+}
+
+.home-circle-1 {
+  background-color: var(--first-color);
+}
+
+.home-circle-2 {
+  background-color: var(--second-color);
+}
+
+.home-circle-3 {
+  background-color: var(--third-color);
+}
+
+.home-img-1,
+.home-img-2 {
+  width: 200px;
+  position: absolute;
+  filter: drop-shadow(0 20px 12px hsla(0, 0%, 0%, 0.4));
+  transition: transform 0.7s 0.1s cubic-bezier(0.2, 0.9, 0.3, 1.3), opacity 0.3s;
+}
+
+.home-img-1 {
+  bottom: 7rem;
+  left: -1.5rem;
+  transform: translateX(-5rem) rotate(60deg);
+  opacity: 0;
+}
+
+.home-img-2 {
+  bottom: 3rem;
+  right: -1.5rem;
+  transform: translateX(5rem) rotate(60deg);
+  opacity: 0;
+}
+
+.home-footer {
+  row-gap: 3rem;
+}
+
+.home-social {
+  justify-content: center;
+  column-gap: 0.5rem;
+}
+
+.home-social-link {
+  font-size: 1.5rem;
+  color: var(--title-color);
+}
+
+.home-controls {
+  flex-direction: column;
+  align-items: center;
+  row-gap: 2rem;
+}
+
+.bg-header {
+  box-shadow: 0 2px 16px hsla(0, 0%, 0%, 0.1);
+}

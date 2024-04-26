@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="shortcut icon"
+      href="assets/img/favicon.png"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sneaker Website</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    <script type="module">
+      import Swiper from "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";
+
+      let swiperImages = new Swiper(".home-swiper", {
+        loop: true,
+        spaceBetween: 64,
+        grabCursor: true,
+        centeredSlides: true,
+
+        pagination: {
+          el: ".swiper-pagination",
+          type: "fraction",
+        },
+
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+
+      let swiperTitles = new Swiper(".home-titles", {
+        loop: true,
+        spaceBetween: 64,
+        grabCursor: true,
+        centeredSlides: true,
+      });
+
+      swiperImages.controller.control = swiperTitles;
+      swiperTitles.controller.control = swiperImages;
+    </script>
+  </body>
+</html>
