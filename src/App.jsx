@@ -125,6 +125,7 @@ const App = () => {
               <div className="home-social">
                 <a
                   href="https://www.facebook.com/"
+                  aria-label="Facebook"
                   target="_blank"
                   className="home-social-link"
                 >
@@ -132,6 +133,7 @@ const App = () => {
                 </a>
                 <a
                   href="https://www.instagram.com/"
+                  aria-label="Instagram"
                   target="_blank"
                   className="home-social-link"
                 >
@@ -139,6 +141,7 @@ const App = () => {
                 </a>
                 <a
                   href="https://www.twitter.com/"
+                  aria-label="Twitter"
                   target="_blank"
                   className="home-social-link"
                 >
